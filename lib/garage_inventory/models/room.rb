@@ -11,6 +11,15 @@ module GarageInventory
         @name       = options[:name]
         @size       = options[:size]
         @tools    ||= []
+
+        instance_eval(&block) if block
+      end
+
+      def method_missing(name, *args)
+        options = args.first.is_a?(Hash) ? args.first : {}
+        options.merge!(name: name.to_s)
+        
+        @tools << OpenStruct.new(options)
       end
 
       private

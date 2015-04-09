@@ -26,4 +26,31 @@ RSpec.describe GarageInventory::Models::Room do
 
   end
 
+  describe 'adding tools' do
+
+    let(:room)       { described_class.new }
+    let(:tool)       { 'screwdriver' }
+    let(:attributes) { { size: 1, type: :philips } }
+
+    subject { room.send(tool, attributes) }
+
+    it "allows adding of arbitrary tools" do
+      expect {
+        subject
+      }.to change { room.tools.size }.by(1)
+    end
+
+    context "added tool" do
+
+      let(:added_tool)        { subject.first }
+      let(:actual_attributes) { added_tool.to_h }
+
+      it "has the expected attributes set" do
+        expect(actual_attributes).to eq(attributes)
+      end
+
+    end
+
+  end
+
 end

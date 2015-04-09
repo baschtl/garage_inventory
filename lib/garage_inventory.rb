@@ -1,3 +1,5 @@
+require 'ostruct'
+
 require "garage_inventory/version"
 
 require "garage_inventory/dsl"

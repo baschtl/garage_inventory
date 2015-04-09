@@ -31,7 +31,7 @@ RSpec.describe GarageInventory::Models::Garage do
   describe '#room' do
 
     let(:garage)  { described_class.new }
-    let(:options) { {} }
+    let(:options) { { name: 'my_room', size: 5 } }
 
     subject { garage.room(options) }
 
@@ -41,7 +41,7 @@ RSpec.describe GarageInventory::Models::Garage do
       }.to change { garage.rooms.size }.by(1)
     end
 
-    it "adds a new item of type garage" do
+    it "adds a new item of type room" do
       subject
 
       expect(garage.rooms.first).to be_an_instance_of(GarageInventory::Models::Room)
@@ -49,11 +49,10 @@ RSpec.describe GarageInventory::Models::Garage do
 
     context "added item" do
 
-      let(:added_garage)      { subject.first }
-      let(:actual_attributes) { { name: added_garage.name, size: added_garage.size, capacity: added_garage.capacity } }
+      let(:added_room)        { subject.first }
+      let(:actual_attributes) { { name: added_room.name, size: added_room.size } }
 
       it "has the expected options set" do
-        pending
         expect(actual_attributes).to eq(options)
       end
 
