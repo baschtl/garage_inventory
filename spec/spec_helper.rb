@@ -21,7 +21,7 @@ require 'factory_girl'
 require 'rspec/its'
 require 'pry'
 
-require 'garage_inventory_dsl'
+require 'garage_inventory'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

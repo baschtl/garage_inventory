@@ -4,8 +4,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'garage_inventory_dsl/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "garage_inventory_dsl"
-  spec.version       = GarageInventoryDsl::VERSION
+  spec.name          = "garage_inventory"
+  spec.version       = GarageInventory::VERSION
   spec.authors       = ["Sebastian Oelke"]
   spec.email         = ["mail@soelke.de"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
