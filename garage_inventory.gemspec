@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'garage_inventory_dsl/version'
+require 'garage_inventory/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "garage_inventory"
