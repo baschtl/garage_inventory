@@ -3,6 +3,10 @@ module GarageInventory
 
     class Room
 
+      def initialize(options = {}, &block)
+
+      end
+
     end
 
   end
