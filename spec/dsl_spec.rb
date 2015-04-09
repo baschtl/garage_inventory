@@ -1,11 +1,6 @@
 RSpec.describe GarageInventory::Dsl do
 
-  describe '#garage' do
-
-    let(:dsl)     { described_class.new }
-    let(:options) { { name: 'my_garage', size: 10, capacity: 3 } }
-
-    subject { dsl.garage(options) }
+  shared_examples_for 'a garage adder' do
 
     it "adds a new item" do
       expect {
@@ -21,18 +16,37 @@ RSpec.describe GarageInventory::Dsl do
 
     context "added item" do
 
-      let(:actual_attributes) { { name: subject.name, size: subject.size, capacity: subject.capacity } }
-
-      subject { dsl.garages.first }
-
-      before do
-        dsl.garage(options)
-      end
+      let(:added_garage)      { subject.first }
+      let(:actual_attributes) { { name: added_garage.name, size: added_garage.size, capacity: added_garage.capacity } }
 
       it "has the expected options set" do
         expect(actual_attributes).to eq(options)
       end
 
+    end
+
+  end
+
+  describe '#initialize_with_file' do
+
+    let(:file_path) { File.join(File.dirname(__FILE__), 'fixtures', 'dsl_fixture.rb') }
+
+    let(:dsl)     { described_class.new }
+    let(:options) { { name: 'my_garage', size: 10, capacity: 3 } }
+
+    it_behaves_like 'a garage adder' do
+      subject { dsl.initialize_with_file(file_path) }
+    end
+
+  end
+
+  describe '#garage' do
+
+    let(:dsl)     { described_class.new }
+    let(:options) { { name: 'my_garage', size: 10, capacity: 3 } }
+
+    it_behaves_like 'a garage adder' do
+      subject { dsl.garage(options) }
     end
 
   end
