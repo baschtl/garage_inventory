@@ -1,13 +1,9 @@
 require "garage_inventory/version"
+require "garage_inventory/dsl"
+
+require "garage_inventory/models/garage"
+require "garage_inventory/models/room"
 
 module GarageInventory
-
-  class Dsl
-
-    def garage(&block)
-      instance_eval(&block) if block
-    end
-
-  end
 
 end
