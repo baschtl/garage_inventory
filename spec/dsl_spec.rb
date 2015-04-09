@@ -29,7 +29,7 @@ RSpec.describe GarageInventory::Dsl do
 
   describe '#initialize_with_file' do
 
-    let(:file_path) { File.join(File.dirname(__FILE__), 'fixtures', 'dsl_fixture.rb') }
+    let(:file_path) { File.join(File.dirname(__FILE__), 'fixtures', 'sample_dsl_definition.rb') }
 
     let(:dsl)     { described_class.new }
     let(:options) { { name: 'my_garage', size: 10, capacity: 3 } }
