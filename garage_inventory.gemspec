@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = GarageInventory::VERSION
   spec.authors       = ["Sebastian Oelke"]
   spec.email         = ["dev@soelke.de"]
-  spec.summary       = %q{A small internal Ruby DSL for garages.}
+  spec.summary       = %q{A small internal Ruby DSL for garage inventory.}
   spec.description   = %q{This gem provides an internal Ruby DSL for garages. It supports adding garages.
                           Each garage can have multiple rooms. Finally, a room consists of multiple tools.}
   spec.homepage      = "https://github.com/baschtl/garage_inventory"
