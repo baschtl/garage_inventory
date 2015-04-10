@@ -7,10 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "garage_inventory"
   spec.version       = GarageInventory::VERSION
   spec.authors       = ["Sebastian Oelke"]
-  spec.email         = ["mail@soelke.de"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.email         = ["dev@soelke.de"]
+  spec.summary       = %q{A small internal Ruby DSL for garages.}
+  spec.description   = %q{This gem provides an internal Ruby DSL for garages. It supports adding garages.
+                          Each garage can have multiple rooms. Finally, a room consists of multiple tools.}
+  spec.homepage      = "https://github.com/baschtl/garage_inventory"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,10 +19,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.6"
+  spec.add_development_dependency "bundler",      "~> 1.6"
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency "pry"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake",         "~> 10.0"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rspec-its"
 end
