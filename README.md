@@ -1,5 +1,7 @@
 # Garage Inventory Dsl
 
+[![Code Climate](https://img.shields.io/codeclimate/github/baschtl/garage_inventory.svg?style=flat-square)](https://codeclimate.com/github/baschtl/garage_inventory)
+
 I wanted to try out writing an internal DSL in Ruby. What I came up with is an inventory DSL for garages. It supports adding garages. Each garage can have multiple rooms. Finally, a room consists of multiple tools that can be defined without restrictions.
 
 ## Installation
