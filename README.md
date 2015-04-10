@@ -1,4 +1,4 @@
-# GarageInventoryDsl
+# Garage Inventory Dsl
 
 TODO: Write a gem description
 
@@ -7,7 +7,7 @@ TODO: Write a gem description
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'garage_inventory_dsl'
+gem 'garage_inventory', git: 'https://github.com/baschtl/garage_inventory.git'
 ```
 
 And then execute:
